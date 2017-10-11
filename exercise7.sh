@@ -110,7 +110,7 @@ GC + geom_histogram(aes(x = percentGC), fill = "blue", color = "black") + theme_
 #-----------------
 
 
-###Exercise7_Qestion 2
+###Exercise7_Question 2
 
 #Set working directory
 setwd("~/Desktop/")
@@ -151,5 +151,8 @@ theme_classic() +
 grid.arrange(mplot, splot, ncol = 2)
 
 
-#The jitter plot looks quite different from the bar plot because the bar plot is decpicting the mean observation of each region which are all roughly 15. The jitter plot shows individual data points, which although they have a mean of about 15, also depict the range and clustering of data points.
+#The jitter plot looks quite different from the bar plot because the bar plot is depicting the 
+mean observation of each region which are all roughly 15. The jitter plot shows individual data 
+points, which although they have a mean of about 15, also depict the range and clustering of 
+data points, giving a better representation of how the data is distributed.
 
