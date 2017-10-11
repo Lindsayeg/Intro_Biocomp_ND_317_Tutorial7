@@ -13,7 +13,7 @@ library(gridExtra)
 #-----------------
 
 setwd("~/Desktop/data-shell/Exercise7/Intro_Biocomp_ND_317_Tutorial7/")
-fasta <- scan("C:Users/Michelle Wang/Desktop/BIOS  60318/Intro_Biocomp_ND_317_Tutorial7/Lecture11.fasta', what = character())
+fasta <- scan("C:Users/Michelle Wang/Desktop/BIOS 60318/Intro_Biocomp_ND_317_Tutorial7/Lecture11.fasta', what = character())
 
 #####Below info obtained from answers_Lecture11.R
 # pre-allocate matrix to store sequence information
@@ -109,19 +109,17 @@ GC + geom_histogram(aes(x = percentGC), fill = "blue", color = "black") + theme_
 ### Question 2 ###
 #-----------------
 
-# Iceland Airbnb dataset
-iceland = read.csv(file = "tomslee_airbnb_iceland_1370_2017-06-18.csv", 
-header = TRUE)
 
-# Extract only number of reviews and price
-bnb = iceland[,c(9,14)]
+###Exercise7_Qestion 2
 
-# Create scatterplot
-iceplot = ggplot(data = bnb, aes(x=price, y=reviews))
-iceplot + geom_point()+ coord_cartesian() + geom_jitter() + 
-theme_classic() + 
-          scale_x_log10() + stat_smooth(method = "loess") +
-          ggtitle("Number of Reviews versus Price in Iceland Airbnb") 
+#Set working directory
+setwd("~/Desktop/")
+
+#Read in data and call it "A"
+A <- read.csv(file = "BCA_Sample.csv")
+
+#Plot data points with Standard conentration on the x-axis and optical density on the y. Remove the default grey background and white lines. Add trendline.
+ggplot(data=A, aes(x=StandardConcentration, y=OpticalDensity)) + geom_point() + theme_classic() + stat_smooth(method = "lm")
 
 
 #-----------------
@@ -152,4 +150,6 @@ theme_classic() +
 # Analyze side-by-side
 grid.arrange(mplot, splot, ncol = 2)
 
+
+#The jitter plot looks quite different from the bar plot because the bar plot is decpicting the mean observation of each region which are all roughly 15. The jitter plot shows individual data points, which although they have a mean of about 15, also depict the range and clustering of data points.
 
